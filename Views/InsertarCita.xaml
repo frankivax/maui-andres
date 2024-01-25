@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="proyecto.Views.InsertarCita"
+             Title="InsertarCita"
+    NavigationPage.HasNavigationBar="False">
+    <ScrollView VerticalOptions="FillAndExpand"
+             Orientation="Vertical"
+             VerticalScrollBarVisibility="Default">
+        <VerticalStackLayout>
+            <Label 
+      Text="AGENDAR CITA"
+      FontSize="24"
+      HorizontalTextAlignment="Center"
+      TextColor="#314E59"
+          Margin="0,10,0,10"
+                FontAttributes="Bold"/>
+            
+
+            <Grid Padding="20">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Text="Taller"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Margin="0,10,0,0"/>
+                <Picker x:Name="pkTalleres"   
+                        Grid.Row="0"
+                     Grid.Column="1"
+                        Margin="0,0,0,10"/>
+
+                <Label Text="Fecha"
+                   FontAttributes="Bold"
+                   TextColor="Black"
+                   Grid.Row="1"
+                   Grid.Column="0"
+                   Margin="0,10,0,0"/>
+                <DatePicker x:Name="dpFecha" Format="dd/MM/yyyy"
+              Grid.Row="1"
+              Grid.Column="1"
+             />
+                <Label Text="Hora"
+       FontAttributes="Bold"
+       TextColor="Black"
+       Grid.Row="2"
+       Grid.Column="0"
+        Margin="0,15,0,0"/>
+
+                <TimePicker x:Name="tpHora"
+                        Grid.Row="2"
+                        Grid.Column="1"
+                        Margin="0,10,0,0"/>
+            </Grid>
+
+            <Label Text="Problema"
+            FontAttributes="Bold"
+            TextColor="Black"
+           Margin="20,0,0,20"
+               FontSize="20"/>
+
+
+            <Entry x:Name="txtProblema"
+      Placeholder="Detalle el problema"
+      Margin="20,0,20,10"
+       HorizontalTextAlignment="Start"/>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnTomarFoto"
+            Text="Tomar Foto"
+             Clicked="btnTomarFoto_Clicked"
+             BackgroundColor="#314E59"
+             FontAttributes="Bold"
+            Margin="15,20,3,0"
+                    Grid.Row="0"
+                    Grid.Column="0"/>
+                <Button x:Name="btnSeleccionarFoto"
+                     Text="Seleccionar Foto"
+                      Clicked="btnSeleccionarFoto_Clicked"
+                      BackgroundColor="#314E59"
+                      FontAttributes="Bold"
+                     Margin="3,20,15,0"
+                    Grid.Row="0"
+                    Grid.Column="1"/>
+            </Grid>
+            <Image x:Name="imgFoto" Margin="15,10,15,0"/>
+
+            <Button x:Name="btnAgendar"
+         Text="Agendar"
+            Clicked="btnAgendar_Clicked"
+          BackgroundColor="#314E59"
+          FontAttributes="Bold"
+         Margin="20,10,20,0"
+        />
+        
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
