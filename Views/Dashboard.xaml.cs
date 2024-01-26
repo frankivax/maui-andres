@@ -19,6 +19,6 @@ public partial class Dashboard : ContentPage
 
     private void btnCita_Clicked(object sender, EventArgs e)
     {
-        Navigation.PushAsync(new InsertarCita());
+        Navigation.PushAsync(new InsertarCita(cliente));
     }
 }

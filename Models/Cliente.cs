@@ -20,6 +20,7 @@ namespace proyecto.Models
         {
             return $"{nombre} {apellido}";
         }
+        //public List<Vehiculo> Vehiculos { get; set; }
     }
 }
 

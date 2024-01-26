@@ -12,7 +12,6 @@ namespace proyecto.Models
         public DateOnly fecha { set; get; }
         public TimeOnly hora { set; get; }
         public string problema { set; get; }
-        public string estado { set; get; }
         public int vehiculoId { set; get; }
         public int tallerId { set; get; }
 

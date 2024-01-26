@@ -21,7 +21,7 @@ public partial class Registro : ContentPage
             parametros.Add("direccion", txtDireccion.Text);
             parametros.Add("correo", txtCorreo.Text);
             parametros.Add("password", txtContrasena.Text);
-            clienteWeb.UploadValues("http://192.168.86.30/tallerMecanico/post.php", "POST", parametros);
+            clienteWeb.UploadValues("http://192.168.100.3/tallerMecanico/post.php", "POST", parametros);
             Navigation.PushAsync(new Login());
         }
         catch (Exception ex)

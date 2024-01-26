@@ -8,7 +8,7 @@ namespace proyecto.Models
 {
     public class Taller
     {
-        public int tallerID { set; get; }
+        public int tallerId { set; get; }
         public string nombreTaller { set; get; }
         public string direccionTaller { set; get; }
         public string telefonoTaller { set; get; }
