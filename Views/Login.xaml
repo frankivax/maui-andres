@@ -9,46 +9,48 @@
                      Padding="20">
 
 
-        <Image Source="https://img.freepik.com/vector-gratis/diseno-logotipo-ingenieria-mecanica_23-2150045645.jpg"
-               MaximumWidthRequest="250"/>
+       <Image Source="logo.png" MaximumWidthRequest="250" Margin="0,20,0,20"/>
 
-        <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition />
-                <RowDefinition/>
- 
-            </Grid.RowDefinitions>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="0.2*" />
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+        <Frame>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition/>
 
-            <Image Source="user.png" 
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.2*" />
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="user.png" 
                    Grid.Row="0"
                    Grid.Column="0"
                   Margin="0,0,5,10"/>
 
 
-            <Entry x:Name="txtCorreo"
-       Placeholder="Ingrese el correo"
-       Grid.Row="0"
-       Grid.Column="1"
-                   Margin="0,0,0,10"/>
+                <Entry x:Name="txtCorreo"
+                   Placeholder="Ingrese el correo"
+                   Grid.Row="0"
+                   Grid.Column="1"
+                   Margin="0,0,0,10"
+                   />
 
-        <Image Source="pass.png" 
+                <Image Source="pass.png" 
                Grid.Row="1"
                Grid.Column="0"
                 Margin="0,0,5,0"/>
 
-        
-            <Entry x:Name="txtContrasena"
+
+                <Entry x:Name="txtContrasena"
          Placeholder="Ingrese la contraseña"
          Grid.Row="1"
          Grid.Column="1"
          IsPassword="True"/>
-        </Grid>
+            </Grid>
+        </Frame>
 
-          <Button x:Name="btnIniciar"
+        <Button x:Name="btnIniciar"
             Text="Iniciar Sesion"
             Clicked="btnIniciar_Clicked"
             Margin="0,0,5,0"

@@ -12,32 +12,44 @@
   TextColor="#314E59"
       Margin="0,10,0,10"
             FontAttributes="Bold"/>
-
-        <Entry x:Name="txtNombre"
-              Placeholder="Nombre"
-              Margin="20,0,20,10"
+        <Frame HeightRequest="80" WidthRequest="350" >
+            <Entry x:Name="txtNombre"
+              Placeholder="*Nombre"
+            
                HorizontalTextAlignment="Center"/>
-        <Entry x:Name="txtApellido"
-              Placeholder="Apellido"
-              Margin="20,0,20,10"
-               HorizontalTextAlignment="Center"/>
-        <Entry x:Name="txtTelefono"
+        </Frame>
+        <Frame HeightRequest="80" WidthRequest="350" Margin="0,5,0,0">
+            <Entry x:Name="txtApellido"
+              Placeholder="*Apellido"
+                HorizontalTextAlignment="Center"/>
+        </Frame>
+        <Frame HeightRequest="80" WidthRequest="350" Margin="0,5,0,0">
+            <Entry x:Name="txtTelefono" 
               Placeholder="Teléfono"
-              Margin="20,0,20,10"
                HorizontalTextAlignment="Center"/>
-        <Entry x:Name="txtDireccion"
+        </Frame>
+        <Frame HeightRequest="80" WidthRequest="350" Margin="0,5,0,0">
+            <Entry x:Name="txtDireccion" 
         Placeholder="Dirección"
-        Margin="20,0,20,10"
          HorizontalTextAlignment="Center"/>
-        <Entry x:Name="txtCorreo"
+        </Frame>
+        <Frame HeightRequest="80" WidthRequest="350" Margin="0,5,0,0">
+            <Entry x:Name="txtCorreo"
         Placeholder="*Correo"
-        Margin="20,0,20,10"
          HorizontalTextAlignment="Center"/>
-        <Entry x:Name="txtContrasena"
+        </Frame>
+        <Frame HeightRequest="80" WidthRequest="350" Margin="0,5,0,0">
+            <Entry x:Name="txtContrasena"
         Placeholder="*Contraseña"
-        Margin="20,0,20,10"
                IsPassword="True"
          HorizontalTextAlignment="Center"/>
+        </Frame>
+        <Frame HeightRequest="80" WidthRequest="350" Margin="0,5,0,0">
+            <Entry x:Name="txtConfirmarContrasena"
+            Placeholder="*Confirmar Contraseña"
+                   IsPassword="True"
+             HorizontalTextAlignment="Center"/>
+        </Frame>
         <Button x:Name="btnRegistro"
                Text="Registrarse"
                Clicked="btnRegistro_Clicked"

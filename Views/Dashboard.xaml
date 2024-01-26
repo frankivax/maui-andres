@@ -3,35 +3,75 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="proyecto.Views.Dashboard"
              Title="Dashboard"
-             NavigationPage.HasNavigationBar="False"
-             BackgroundColor="#04ADBF">
+             NavigationPage.HasNavigationBar="False">
     <VerticalStackLayout>
         <Label x:Name="lblUsuario"
         FontSize="25"
         HorizontalTextAlignment="Center"
-               TextColor="White"
+               TextColor="#314E59"
                FontAttributes="Bold"
                Margin="0,10,0,0"/>
 
-        <Image Source="https://cdn.pixabay.com/photo/2021/11/30/09/20/car-repair-6834873_1280.png"
-       MaximumWidthRequest="250"/>
 
-        <Button x:Name="btnInsertarVehiculo"
-         Text="Ingresar vehiculo a reparar"
-          Clicked="btnInsertarVehiculo_Clicked"
-          BackgroundColor="#314E59"
+        <Grid Padding="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="150"/>
+                <RowDefinition/>
+                <RowDefinition Height="170"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Image Source="edituser.png" 
+                       Grid.Row="0"
+                       Grid.Column="0"/>
+            <Button x:Name="btnActualizarCliente"
+             Text="Actualizar Información"
+              Clicked="btnActualizarCliente_Clicked"
+              BackgroundColor="#314E59"
               FontAttributes="Bold"
-                 Margin="20,0,20,0"/>
+              Margin="20,0,20,0"
+              Grid.Row="1"
+                    Grid.Column="0"
+                    FontAutoScalingEnabled="True"/>
+            <Image Source="repararvehiculo.png" 
+                   Grid.Row="0"
+                   Grid.Column="1"/>
+            <Button x:Name="btnInsertarVehiculo"
+             Text="Ingresar vehiculo a reparar"
+              Clicked="btnInsertarVehiculo_Clicked"
+              BackgroundColor="#314E59"
+                  FontAttributes="Bold"
+                     Margin="20,0,20,0"
+                    Grid.Row="1"
+                    Grid.Column="1"/>
+                <Image Source="agendarcita.png" 
+                       Grid.Row="2"
+                       Grid.Column="0"/>
 
-        <Image Source="https://www.netlife.ec/wp-content/uploads/2020/12/icono-agenda-over.png"
-MaximumWidthRequest="250"/>
-        <Button x:Name="btnCita"
-        Text="Solicitar Cita"
-         Clicked="btnCita_Clicked"
-         BackgroundColor="#314E59"
-         FontAttributes="Bold"
-                 Margin="20,0,20,0"/>    
+            <Button x:Name="btnCita"
+            Text="Reservar Cita"
+             Clicked="btnCita_Clicked"
+             BackgroundColor="#314E59"
+             FontAttributes="Bold"
+                     Margin="20,0,20,0"
+                    Grid.Row="3"
+                    Grid.Column="0"/>
+            <Image Source="vercitas.png" 
+                   Grid.Row="2"
+                   Grid.Column="1"/>
+            <Button x:Name="btnVerCitas"
+             Text="Ver Citas"
+          Clicked="btnVerCitas_Clicked"
+          BackgroundColor="#314E59"
+          FontAttributes="Bold"
+                  Margin="20,0,20,0"
+                 Grid.Row="3"
+                 Grid.Column="1"/>  
 
+        </Grid>
 
     </VerticalStackLayout>
 </ContentPage>

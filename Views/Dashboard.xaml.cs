@@ -21,4 +21,14 @@ public partial class Dashboard : ContentPage
     {
         Navigation.PushAsync(new InsertarCita(cliente));
     }
+
+    private void btnActualizarCliente_Clicked(object sender, EventArgs e)
+    {
+
+    }
+
+    private void btnVerCitas_Clicked(object sender, EventArgs e)
+    {
+
+    }
 }

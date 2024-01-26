@@ -6,7 +6,7 @@ namespace proyecto.Views;
 
 public partial class Login : ContentPage
 {
-    private const string Url = "http://192.168.100.3/tallerMecanico/post.php";
+    private const string Url = "http://192.168.86.30/tallerMecanico/post.php";
     private readonly HttpClient cliente = new HttpClient();
     private ObservableCollection<Cliente> cli;
     public Login()

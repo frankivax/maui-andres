@@ -24,7 +24,7 @@ public partial class InsertarVehiculo : ContentPage
             parametros.Add("modelo", txtModelo.Text);
             parametros.Add("anio", txtAnio.Text);
             parametros.Add("clienteId", txtClienteId.Text);
-            clienteWeb.UploadValues("http://192.168.100.3/tallerMecanico/postVehiculo.php", "POST", parametros);
+            clienteWeb.UploadValues("http://192.168.86.30/tallerMecanico/postVehiculo.php", "POST", parametros);
             Navigation.PushAsync(new Dashboard(cliente));
         }
         catch (Exception ex)
