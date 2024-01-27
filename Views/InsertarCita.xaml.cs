@@ -8,7 +8,7 @@ namespace proyecto.Views;
 public partial class InsertarCita : ContentPage
 {
     private Cliente cliente;
-    private const string Url = "http://192.168.86.30/tallerMecanico/postTaller.php";
+    private const string Url = "http://192.168.100.3/tallerMecanico/postTaller.php";
     private readonly HttpClient clienteWeb = new HttpClient();
     private ObservableCollection<Taller> talleres;
     private ObservableCollection<Vehiculo> vehiculos;
@@ -34,7 +34,7 @@ public partial class InsertarCita : ContentPage
     public async void ObtenerVehiculos(Cliente cliente)
     {
      
-        string urlVehiculos = $"http://192.168.86.30/tallerMecanico/postVehiculo.php?clienteId={cliente.clienteId}";
+        string urlVehiculos = $"http://192.168.100.3/tallerMecanico/postVehiculo.php?clienteId={cliente.clienteId}";
 
         var contentVehiculos = await clienteWeb.GetStringAsync(urlVehiculos);
         List<Vehiculo> mostrarVehiculos = JsonConvert.DeserializeObject<List<Vehiculo>>(contentVehiculos);
@@ -67,8 +67,6 @@ public partial class InsertarCita : ContentPage
     {
         try
         {
-    
-
             WebClient clienteWeb = new WebClient();
             int tallerId = talleres[pkTalleres.SelectedIndex].tallerId;
             int vehiculoId = vehiculos[pkVehiculos.SelectedIndex].vehiculoId;
@@ -80,7 +78,7 @@ public partial class InsertarCita : ContentPage
             parametros.Add("problema", txtProblema.Text);
             parametros.Add("tallerId", tallerId.ToString());
             parametros.Add("vehiculoId", vehiculoId.ToString());
-            clienteWeb.UploadValues("http://192.168.86.30/tallerMecanico/postCita.php", "POST", parametros);
+            clienteWeb.UploadValues("http://192.168.100.3/tallerMecanico/postCita.php", "POST", parametros);
             Navigation.PushAsync(new Dashboard(cliente));
         }
         catch (Exception ex)

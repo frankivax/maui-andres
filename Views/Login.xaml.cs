@@ -6,7 +6,7 @@ namespace proyecto.Views;
 
 public partial class Login : ContentPage
 {
-    private const string Url = "http://192.168.86.30/tallerMecanico/post.php";
+    private const string Url = "http://192.168.100.3/tallerMecanico/post.php";
     private readonly HttpClient cliente = new HttpClient();
     private ObservableCollection<Cliente> cli;
     public Login()
@@ -24,6 +24,7 @@ public partial class Login : ContentPage
 
     private void btnIniciar_Clicked(object sender, EventArgs e)
     {
+       
         string usuario = txtCorreo.Text;
         string contrasena = txtContrasena.Text;
 
@@ -47,5 +48,11 @@ public partial class Login : ContentPage
     private void btnRegistro_Clicked(object sender, EventArgs e)
     {
         Navigation.PushAsync(new Registro());
+    }
+
+    public void LimpiarCampos()
+    {
+        txtCorreo.Text = string.Empty;
+        txtContrasena.Text = string.Empty;
     }
 }

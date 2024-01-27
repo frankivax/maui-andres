@@ -10,6 +10,7 @@ public partial class Dashboard : ContentPage
         InitializeComponent();
         this.cliente = cliente; // Almacena el cliente recibido en la variable de instancia
         lblUsuario.Text = "Bienvenido/a "+cliente.GetFullName();
+
     }
 
     private void btnInsertarVehiculo_Clicked(object sender, EventArgs e)
@@ -31,4 +32,22 @@ public partial class Dashboard : ContentPage
     {
 
     }
+    protected override bool OnBackButtonPressed()
+    {
+        // Bloquear la pulsación del botón de retroceso
+        return true;
+    }
+
+    private void ImageButton_Clicked(object sender, EventArgs e)
+    {
+        Navigation.PushAsync(new Login());
+
+        // Limpiar los campos de usuario y contraseña
+        if (Application.Current.MainPage is NavigationPage navigationPage)
+        {
+            var loginPage = navigationPage.RootPage as Login;
+            loginPage?.LimpiarCampos();
+        }
+    }
+    
 }

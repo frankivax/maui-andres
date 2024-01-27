@@ -29,6 +29,13 @@ public partial class Registro : ContentPage
                 return; // Salir del método si las contraseñas no coinciden
             }
 
+            // Verificar que el correo electrónico contenga un símbolo "@"
+            if (!txtCorreo.Text.Contains("@"))
+            {
+                DisplayAlert("ERROR", "Ingrese un correo electrónico válido.", "CERRAR");
+                return; // Salir del método si el correo no es válido
+            }
+
             // Resto del código para enviar la solicitud de registro
             WebClient clienteWeb = new WebClient();
             var parametros = new System.Collections.Specialized.NameValueCollection();
@@ -38,7 +45,7 @@ public partial class Registro : ContentPage
             parametros.Add("direccion", txtDireccion.Text);
             parametros.Add("correo", txtCorreo.Text);
             parametros.Add("password", txtContrasena.Text);
-            clienteWeb.UploadValues("http://192.168.86.30/tallerMecanico/post.php", "POST", parametros);
+            clienteWeb.UploadValues("http://192.168.100.3/tallerMecanico/post.php", "POST", parametros);
 
             // Mostrar mensaje de registro exitoso
             DisplayAlert("ÉXITO", "Registro exitoso", "CERRAR");
