@@ -15,44 +15,44 @@
       TextColor="#314E59"
           Margin="0,10,0,10"
                 FontAttributes="Bold"/>
-            
 
-            <Grid Padding="20">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="0.3*"/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Label Text="Taller:"
+            <Frame Padding="20" Margin="15,0,15,0">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.4*"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Taller:"
                    FontAttributes="Bold"
                    TextColor="Black"
                    Grid.Row="0"
                    Grid.Column="0"
                    Margin="0,10,0,0"
                        FontSize="18"/>
-                <Picker x:Name="pkTalleres"   
+                    <Picker x:Name="pkTalleres"   
                         Grid.Row="0"
                      Grid.Column="1"
                         Margin="0,0,0,10"
                         />
 
-                <Label Text="Fecha:"
+                    <Label Text="Fecha:"
                    FontAttributes="Bold"
                    TextColor="Black"
                    Grid.Row="1"
                    Grid.Column="0"
                    Margin="0,10,0,0"
                        FontSize="18"/>
-                <DatePicker x:Name="dpFecha" Format="yyyy/MM/dd"
+                    <DatePicker x:Name="dpFecha" Format="yyyy/MM/dd"
               Grid.Row="1"
               Grid.Column="1"
              />
-                <Label Text="Hora:"
+                    <Label Text="Hora:"
                    FontAttributes="Bold"
                    TextColor="Black"
                    Grid.Row="2"
@@ -60,7 +60,7 @@
                     Margin="0,15,0,0"
                        FontSize="18"/>
 
-                <TimePicker x:Name="tpHora"
+                    <TimePicker x:Name="tpHora"
                         Grid.Row="2"
                         Grid.Column="1"
                         Margin="0,10,0,0"/>
@@ -72,23 +72,25 @@
                     Grid.Column="0"
                     Margin="0,10,0,0"
                            FontSize="18"/>
-                     <Picker x:Name="pkVehiculos"   
+                    <Picker x:Name="pkVehiculos"   
                          Grid.Row="3"
                       Grid.Column="1"
                          Margin="0,0,0,10"/>
-            </Grid>
-
-            <Label Text="Problema"
+                </Grid>
+            </Frame>
+           
+                <Label Text="Problema"
             FontAttributes="Bold"
             TextColor="Black"
-           Margin="20,0,0,20"
+           Margin="20,20,0,20"
                FontSize="20"/>
 
-
-            <Entry x:Name="txtProblema"
-      Placeholder="Detalle el problema"
-      Margin="20,0,20,10"
+            <Frame Padding="10" Margin="15,0,15,0">
+                <Entry x:Name="txtProblema"
+      Placeholder="*Detalle el problema"
+      Margin="10,0,10,10"
        HorizontalTextAlignment="Start"/>
+            </Frame>
 
             <Grid>
                 <Grid.RowDefinitions>

@@ -67,6 +67,15 @@ public partial class InsertarCita : ContentPage
     {
         try
         {
+            // Validar que los campos obligatorios no estén vacíos
+            if (dpFecha.Date == null || tpHora.Time == null ||
+                string.IsNullOrWhiteSpace(txtProblema.Text) || pkTalleres.SelectedIndex == -1 ||
+                pkVehiculos.SelectedIndex == -1)
+            {
+                DisplayAlert("ERROR", "Todos los campos son obligatorios.", "CERRAR");
+                return;
+            }
+
             WebClient clienteWeb = new WebClient();
             int tallerId = talleres[pkTalleres.SelectedIndex].tallerId;
             int vehiculoId = vehiculos[pkVehiculos.SelectedIndex].vehiculoId;
@@ -78,12 +87,15 @@ public partial class InsertarCita : ContentPage
             parametros.Add("problema", txtProblema.Text);
             parametros.Add("tallerId", tallerId.ToString());
             parametros.Add("vehiculoId", vehiculoId.ToString());
+
             clienteWeb.UploadValues("http://192.168.100.3/tallerMecanico/postCita.php", "POST", parametros);
             Navigation.PushAsync(new Dashboard(cliente));
+
+            // Mostrar mensaje de éxito
+            DisplayAlert("Éxito", "Cita registrada correctamente.", "OK");
         }
         catch (Exception ex)
         {
-
             DisplayAlert("ERROR", ex.Message, "CERRAR");
         }
     }

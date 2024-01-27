@@ -17,6 +17,14 @@ public partial class InsertarVehiculo : ContentPage
     {
         try
         {
+            // Validar que los campos obligatorios no estén vacíos
+            if (string.IsNullOrWhiteSpace(txtPlaca.Text) || string.IsNullOrWhiteSpace(txtMarca.Text) ||
+                string.IsNullOrWhiteSpace(txtModelo.Text) || string.IsNullOrWhiteSpace(txtAnio.Text))
+            {
+                DisplayAlert("ERROR", "Todos los campos son obligatorios.", "CERRAR");
+                return;
+            }
+
             WebClient clienteWeb = new WebClient();
             var parametros = new System.Collections.Specialized.NameValueCollection();
             parametros.Add("placa", txtPlaca.Text);
@@ -24,12 +32,15 @@ public partial class InsertarVehiculo : ContentPage
             parametros.Add("modelo", txtModelo.Text);
             parametros.Add("anio", txtAnio.Text);
             parametros.Add("clienteId", txtClienteId.Text);
+
             clienteWeb.UploadValues("http://192.168.100.3/tallerMecanico/postVehiculo.php", "POST", parametros);
             Navigation.PushAsync(new Dashboard(cliente));
+
+            // Mostrar mensaje de éxito
+            DisplayAlert("Éxito", "Vehículo registrado correctamente.", "OK");
         }
         catch (Exception ex)
         {
-
             DisplayAlert("ERROR", ex.Message, "CERRAR");
         }
     }

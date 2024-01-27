@@ -55,4 +55,9 @@ public partial class Login : ContentPage
         txtCorreo.Text = string.Empty;
         txtContrasena.Text = string.Empty;
     }
+    protected override bool OnBackButtonPressed()
+    {
+        // Bloquear la pulsación del botón de retroceso
+        return true;
+    }
 }

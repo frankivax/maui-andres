@@ -20,30 +20,42 @@
              HorizontalTextAlignment="Center"
                IsReadOnly="True"
                IsVisible="False"/>
-        <Entry x:Name="txtPlaca"
-            Placeholder="Placa"
-            Margin="20,0,20,10"
-             HorizontalTextAlignment="Center"/>
+        <Frame Padding="5" Margin="20,5,20,0" >
+            <Entry x:Name="txtPlaca"
+                Placeholder="*Placa"
+                Margin="10,0,10,0"  
+                HorizontalTextAlignment="Center"
+                TextTransform="Uppercase"/>
+        </Frame>
+        <Frame Padding="5" Margin="20,5,20,0" >
             <Entry x:Name="txtModelo"
-            Placeholder="Modelo"
-            Margin="20,0,20,10"
-             HorizontalTextAlignment="Center"/>
+            Placeholder="*Modelo"
+             Margin="10,0,10,0"  
+             HorizontalTextAlignment="Center"
+             TextTransform="Uppercase"/>
+        </Frame>
+        <Frame Padding="5" Margin="20,5,20,0" >
             <Entry x:Name="txtMarca"
-            Placeholder="Marca"
-            Margin="20,0,20,10"
-             HorizontalTextAlignment="Center"/>
+            Placeholder="*Marca"
+            Margin="10,0,10,0"  
+            HorizontalTextAlignment="Center"
+            TextTransform="Uppercase"/>
+        </Frame>
+        <Frame Padding="5" Margin="20,5,20,0" >
             <Entry x:Name="txtAnio"
-      Placeholder="Año"
-      Margin="20,0,20,10"
-       HorizontalTextAlignment="Center"/>
+                    Placeholder="*Año"
+                    Margin="10,0,10,0"  
+                    HorizontalTextAlignment="Center"
+                   Keyboard="Numeric"
+                   MaxLength="4"/>
+        </Frame>
 
-
-            <Button x:Name="btnAgregarVehiculo"
+        <Button x:Name="btnAgregarVehiculo"
              Text="Agregar"
                 Clicked="btnAgregarVehiculo_Clicked"
               BackgroundColor="#314E59"
               FontAttributes="Bold"
-             Margin="20,20,20,0"/>
+             Margin="30,20,30,0"/>
         </VerticalStackLayout>
 
 </ContentPage>

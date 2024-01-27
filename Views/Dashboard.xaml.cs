@@ -25,7 +25,7 @@ public partial class Dashboard : ContentPage
 
     private void btnActualizarCliente_Clicked(object sender, EventArgs e)
     {
-
+        Navigation.PushAsync(new ActualizarCliente(cliente));
     }
 
     private void btnVerCitas_Clicked(object sender, EventArgs e)
